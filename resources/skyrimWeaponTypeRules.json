@@ -1,0 +1,21 @@
+{
+  "OneHandDagger": "WeapTypeDagger",
+  "TwoHandAxe": [{
+    "condition": {
+      "path": "FULL",
+      "matches": " Battleaxe$"
+    },
+    "keyword": "WeapTypeBattleaxe"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": " Warhammer$"
+    },
+    "keyword": "WeapTypeWarhammer"
+  }],
+  "Bow": "WeapTypeBow",
+  "TwoHandSword": "WeapTypeGreatsword",
+  "OneHandMace": "WeapTypeMace",
+  "OneHandSword": "WeapTypeSword",
+  "OneHandAxe": "WeapTypeWarAxe"
+}

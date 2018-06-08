@@ -1,0 +1,143 @@
+{
+  "ALCH": [{
+    "condition": {
+      "path": "FULL",
+      "matches": "(?:Breast|Meat|Snout|Steak|Roast|Leg|Haunch)$"
+    },
+    "keyword": "VendorItemFoodRaw"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "(?:Poison|^Ice Wraith Bane|^Nightshade Extract|Aversion to (?:Fire|Frost|Shock|Magic))$"
+    },
+    "keyword": "VendorItemPoison"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "(?:^(?:Potion|Draught|Solution|Philter|Elixir|Grand Elixir|Prime Elixir) of|^Unknown Potion$|^Ice Wraith Essence$)"
+    },
+    "keyword": "VendorItemPotion"
+  }, {
+    "keyword": "VendorItemFood"
+  }],
+  "INGR": [{
+    "condition": {
+      "path": "FULL",
+      "matches": "Egg$"
+    },
+    "keyword": "VendorItemFood"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "^(?:Garlic|Juniper Berries|Salt Pile|Slaughterfish Egg|Wheat)$"
+    },
+    "keyword": "VendorItemFoodRaw"
+  }, {
+    "keyword": "VendorItemIngredient"
+  }],
+  "AMMO": "VendorItemArrow",
+  "KEYM": "VendorItemKey",
+  "BOOK": [{
+    "condition": {
+      "path": "FULL",
+      "matches": "(?:Potion|Poison) Recipe$"
+    },
+    "keyword": "VendorItemRecipe"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "^Spell Tome:"
+    },
+    "keyword": "VendorItemSpellTome"
+  }, {
+    "keyword": "VendorItemBook"
+  }],
+  "SCRL": "VendorItemScroll",
+  "MISC": [{
+    "condition": {
+      "path": "FULL",
+      "matches": "(?:Ingot$|Ore$|Dwemer|War Horn$|^Refined|^Broken Iron|^Broken Steel)"
+    },
+    "keyword": "VendorItemOreIngot"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "equals": "Firewood"
+    },
+    "keyword": "VendorItemFirewood"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "Soul Gem$"
+    },
+    "keyword": "VendorItemSoulGem"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "(?:^Meridia's Beacon$|^Torpor Ingredient|^Jeweled|^Sealed Letter$|^Mark of Dibella$|Amethyst$|Diamond$|Emerald$|Garnet$|Ruby$|Sapphire$)"
+    },
+    "keyword": "VendorItemGem"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "(?:^Leather|^Leather Strips|^Bloody Rags|Hide|Pelt|Skin)$"
+    },
+    "keyword": "VendorItemAnimalHide"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "(?:^Opaque Vessel|Head|Tusk|Skull|Heartscales|Scales|Bone|Chitin)$"
+    },
+    "keyword": "VendorItemAnimalPart"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "^(?:Charcoal|Essence Extractor|Embalming Tool|Linen Wrap|Lockpick)$"
+    },
+    "keyword": "VendorItemTool"
+  }, {
+    "keyword": "VendorItemClutter"
+  }],
+  "ARMO": [{
+    "condition": {
+      "function": "HasKeyword",
+      "keyword": "DaedricArtifact"
+    },
+    "keyword": "VendorItemDaedricArtifact"
+  }, {
+    "condition": {
+      "path": "FULL",
+      "matches": "^Fur"
+    },
+    "keyword": "VendorItemAnimalHide"
+  }, {
+    "condition": {
+      "path": "[BODT|BOD2]\\Armor Type",
+      "equals": "Clothing"
+    },
+    "keyword": "VendorItemClothing"
+  }, {
+    "condition": {
+      "function": "HasKeyword",
+      "keyword": "ArmorJewelry"
+    },
+    "keyword": "VendorItemJewelry"
+  }, {
+    "keyword": "VendorItemArmor"
+  }],
+  "WEAP": [{
+    "condition": {
+      "function": "HasKeyword",
+      "keyword": "DaedricArtifact"
+    },
+    "keyword": "VendorItemDaedricArtifact"
+  }, {
+    "condition": {
+      "path": "DNAM\\Animation Type",
+      "equals": "Staff"
+    },
+    "keyword": "VendorItemStaff"
+  }, {
+    "keyword": "VendorItemWeapon"
+  }]
+}

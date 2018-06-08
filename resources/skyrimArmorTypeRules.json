@@ -1,0 +1,14 @@
+{
+  "Heavy Armor": "ArmorHeavy",
+  "Light Armor": "ArmorLight",
+  "Clothing": [{
+    "condition": {
+      "function": "FlagEnabled",
+      "path": "[BODT|BOD2]\\First Person Flags",
+      "flags": ["35 - Amulet", "36 - Ring"]
+    },
+    "keyword": "ArmorJewelry"
+  }, {
+    "keyword": "ArmorClothing"
+  }]
+}
