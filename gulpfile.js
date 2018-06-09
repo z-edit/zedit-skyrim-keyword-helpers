@@ -19,6 +19,9 @@ gulp.task('build', ['clean'], function() {
     gulp.src('partials/*.html')
         .pipe(gulp.dest('dist/partials'));
 
+    gulp.src('resources/*.json')
+        .pipe(gulp.dest('dist/resources'));
+
     gulp.src('docs/*.html')
         .pipe(gulp.dest('dist/docs'));
 
