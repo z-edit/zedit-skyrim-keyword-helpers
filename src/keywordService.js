@@ -10,7 +10,7 @@ ngapp.service('keywordService', function(keywordCacheService) {
             return xelib.WithHandles(elements, keywords => {
                 for (let i = 0; i < keywords.length; i++) {
                     let keyword = xelib.GetRefEditorID(keywords[i], ''),
-                        match = expr.match(keyword);
+                        match = keyword.match(expr);
                     if (match) return match[1];
                 }
             });
