@@ -23,7 +23,7 @@ ngapp.service('keywordService', function(keywordCacheService) {
                 for (let i = 0; i < keywords.length; i++) {
                     let keyword = keywords[i],
                         edid = xelib.GetRefEditorID(keyword, '');
-                    if (expr.test(edid)) return keyword;
+                    if (expr.test(edid)) return xelib.GetElement(keyword);
                 }
             });
         };
