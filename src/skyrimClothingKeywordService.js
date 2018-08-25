@@ -14,6 +14,6 @@ ngapp.service('skyrimClothingKeywordService', function(keywordService) {
         expr: /^Clothing(\w+)/,
         getExpr: str => new RegExp('Clothing' + str + '$'),
         getRuleKey: getClothingFlag,
-        rules: 'skyrimClothingPartRules.json'
+        rules: `${patcherPath}\\resources\\skyrimClothingPartRules.json`
     });
 });

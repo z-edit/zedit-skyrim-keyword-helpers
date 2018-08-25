@@ -6,6 +6,6 @@ ngapp.service('skyrimVendorKeywordService', function(keywordService) {
         expr: /^Vendor(?:Item)?(\w+)/,
         getExpr: str => new RegExp('Vendor(?:Item)?' + str + '$'),
         getRuleKey: xelib.Signature,
-        rules: 'skyrimVendorRules.json'
+        rules: `${patcherPath}\\resources\\skyrimVendorRules.json`
     });
 });

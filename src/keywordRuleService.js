@@ -42,7 +42,7 @@ ngapp.service('keywordRuleService', function() {
         if (!rules) return;
 
         let getRules = function() {
-            return typeof rules === 'object' ? rules : loadResource(rules);
+            return typeof rules === 'object' ? rules : fh.loadJsonFile(rules);
         };
 
         let loadRules = function() {

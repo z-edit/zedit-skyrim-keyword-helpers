@@ -6,6 +6,6 @@ ngapp.service('skyrimWeaponKeywordService', function(keywordService) {
         expr: /WeapType(\w+)/,
         getExpr: str => new RegExp('WeapType' + str + '$'),
         getRuleKey: rec => xelib.GetValue(rec, 'DNAM\\Animation Type'),
-        rules: 'skyrimWeaponTypeRules.json'
+        rules: `${patcherPath}\\resources\\skyrimWeaponTypeRules.json`
     });
 });
