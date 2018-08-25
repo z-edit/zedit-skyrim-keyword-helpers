@@ -1,14 +1,11 @@
-ngapp.service('skyrimVendorKeywordService', function(keywordService, keywordRuleService) {
-    const vendorExpr = /^Vendor(?:Item)?(\w+)/;
-
-    let service = this;
-
-    // PRIVATE
-    let getVendorExpr = str => new RegExp('Vendor(?:Item)?' + str + '$');
-
+ngapp.service('skyrimVendorKeywordService', function(keywordService) {
     // INHERITED FUNCTIONS
-    // inferClothingPart
-    keywordRuleService.buildFunctions(service, 'Vendor', xelib.Signature);
-    // getVendor, getVendorKeyword, setVendorKeyword
-    keywordService.buildFunctions(service, 'Vendor', vendorExpr, getVendorExpr);
+    // getVendor, inferVendor,
+    // getVendorKeyword, setVendorKeyword
+    keywordService.buildFunctions(this, 'Vendor', {
+        expr: /^Vendor(?:Item)?(\w+)/,
+        getExpr: str => new RegExp('Vendor(?:Item)?' + str + '$'),
+        getRuleKey: xelib.Signature,
+        rules: 'skyrimVendorRules.json'
+    });
 });

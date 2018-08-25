@@ -1,15 +1,11 @@
-ngapp.service('skyrimWeaponKeywordService', function(keywordService, keywordRuleService) {
-    const weapTypeExpr = /WeapType(\w+)/;
-
-    let service = this;
-
-    // PRIVATE
-    let getAnimType = rec => xelib.GetValue(rec, 'DNAM\\Animation Type');
-    let getWeapTypeExpr = str => new RegExp('WeapType' + str + '$');
-
+ngapp.service('skyrimWeaponKeywordService', function(keywordService) {
     // INHERITED FUNCTIONS
-    // inferWeaponType
-    keywordRuleService.buildFunctions(service, 'WeaponType', getAnimType);
-    // getWeaponType, getWeaponTypeKeyword, setWeaponTypeKeyword
-    keywordService.buildFunctions(service, 'WeaponType', weapTypeExpr, getWeapTypeExpr);
+    // getWeaponType, inferWeaponType,
+    // getWeaponTypeKeyword, setWeaponTypeKeyword
+    keywordService.buildFunctions(this, 'WeaponType', {
+        expr: /WeapType(\w+)/,
+        getExpr: str => new RegExp('WeapType' + str + '$'),
+        getRuleKey: rec => xelib.GetValue(rec, 'DNAM\\Animation Type'),
+        rules: 'skyrimWeaponTypeRules.json'
+    });
 });

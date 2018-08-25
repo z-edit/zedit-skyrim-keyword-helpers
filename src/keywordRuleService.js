@@ -32,11 +32,21 @@ ngapp.service('keywordRuleService', function() {
         });
     };
 
-    this.buildFunctions = function(service, key, getRuleKey, defaultValue) {
-        let rulesKey = `${key.uncapitalize()}Rules`;
+    this.addConditionFunction = function(key, fn) {
+        conditionFunctions[key] = fn;
+    };
+
+    this.buildInfer = function(service, key, options) {
+        let {getRuleKey, rules} = options,
+            rulesKey = `${key.uncapitalize()}Rules`;
+        if (!rules) return;
+
+        let getRules = function() {
+            return typeof rules === 'object' ? rules : loadResource(rules);
+        };
 
         let loadRules = function() {
-            service[rulesKey] = loadResource(`skyrim${key}Rules`);
+            service[rulesKey] = getRules();
             Object.values(service[rulesKey]).forEach(rules => {
                 if (rules.constructor !== Array) return;
                 rules.forEach(r => {
@@ -53,5 +63,7 @@ ngapp.service('keywordRuleService', function() {
                 rule = findMatchingRule(rules, rec);
             return rule ? rule.keyword : defaultValue;
         };
+
+        return service[`infer${key}`];
     };
 });

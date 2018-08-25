@@ -1,19 +1,19 @@
-ngapp.service('skyrimClothingKeywordService', function(keywordService, keywordRuleService) {
-    const clothingPartExpr = /^Clothing(\w+)/,
-        flagsPath = '[BODT|BOD2]\\First Person Flags';
-
+ngapp.service('skyrimClothingKeywordService', function(keywordService) {
     let service = this;
 
     // PRIVATE
-    let getArmorFlag = rec => {
-        return xelib.GetEnabledFlags(rec, flagsPath)
+    let getClothingFlag = rec => {
+        return xelib.GetEnabledFlags(rec, '[BODT|BOD2]\\First Person Flags')
             .find(flag => service.clothingPartRules.hasOwnProperty(flag));
     };
-    let getClothingPartExpr = str => new RegExp('Clothing' + str + '$');
 
     // INHERITED FUNCTIONS
-    // inferClothingPart
-    keywordRuleService.buildFunctions(service, 'ClothingPart', getArmorFlag);
-    // getClothingPart, getClothingPartKeyword, setClothingPartKeyword
-    keywordService.buildFunctions(service, 'ClothingPart', clothingPartExpr, getClothingPartExpr);
+    // getClothingPart, inferClothingPart,
+    // getClothingPartKeyword, setClothingPartKeyword
+    keywordService.buildFunctions(this, 'ClothingPart', {
+        expr: /^Clothing(\w+)/,
+        getExpr: str => new RegExp('Clothing' + str + '$'),
+        getRuleKey: getClothingFlag,
+        rules: 'skyrimClothingPartRules.json'
+    });
 });

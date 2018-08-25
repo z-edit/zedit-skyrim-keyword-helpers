@@ -11,14 +11,13 @@
     "build": "gulp build",
     "release": "gulp release"
   },
-  "dependencies": {
-    "xelib": "github:z-edit/xelib"
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-include": "^2.3.1",
     "gulp-rename": "^1.2.2",
-    "gulp-zip": "^4.0.0"
+    "gulp-zip": "^4.0.0",
+    "xelib": "github:matortheeternal/xelib"
   }
 }

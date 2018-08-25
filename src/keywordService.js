@@ -1,8 +1,11 @@
-ngapp.service('keywordService', function(keywordCacheService) {
+ngapp.service('keywordService', function(keywordCacheService, keywordRuleService) {
     let {cache, buildCache, resolveKeyword} = keywordCacheService;
+    let {buildInfer} = keywordRuleService;
 
-    this.buildFunctions = function(service, key, expr, getExpr) {
-        let infer = service[`infer${key}`];
+    this.buildFunctions = function(service, key, options) {
+        let {expr, getExpr} = options;
+
+        let infer = buildInfer(service, key, options);
 
         let get = function(rec) {
             if (!xelib.HasElement(rec, 'KWDA')) return;
