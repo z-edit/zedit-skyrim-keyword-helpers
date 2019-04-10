@@ -10,8 +10,7 @@ ngapp.service('skyrimMaterialService', function(keywordService) {
     };
 
     // INHERITED FUNCTIONS
-    // getMaterial, inferMaterial,
-    // getMaterialKeyword, setMaterialKeyword
+    // getMaterial, getMaterialKeyword, setMaterialKeyword
     keywordService.buildFunctions(this, 'Material', {
         expr: /(?:Armor|Weap(?:on)?)Materi[ae]l(\w+)/,
         getExpr: (str, rec) => {
