@@ -15,7 +15,7 @@ ngapp.service('skyrimArmorKeywordService', function(keywordService) {
         expr: /^Armor(?!Materi[ae]l|Heavy|Light|Clothing|Jewelry)(\w+)/,
         getExpr: getArmorExpr,
         getRuleKey: getArmorFlag,
-        rules: `${patcherPath}\\resources\\skyrimArmorPartRules.json`
+        rules: `${modulePath}\\resources\\skyrimArmorPartRules.json`
     });
 
     // getArmorType, inferArmorType,
@@ -24,6 +24,6 @@ ngapp.service('skyrimArmorKeywordService', function(keywordService) {
         expr: /^Armor(Heavy|Light|Clothing|Jewelry)$/,
         getExpr: getArmorExpr,
         getRuleKey: xelib.GetArmorType,
-        rules: `${patcherPath}\\resources\\skyrimArmorTypeRules.json`
+        rules: `${modulePath}\\resources\\skyrimArmorTypeRules.json`
     });
 });
