@@ -1,11 +1,11 @@
 {
-  "name": "zedit-keyword-helpers",
-  "productName": "zEdit Keyword Helpers",
-  "description": "A set of services related to keywords.",
+  "name": "zedit-skyrim-keyword-helpers",
+  "productName": "zEdit Skyrim Keyword Helpers",
+  "description": "A set of services related to skyrim keywords.",
   "version": "1.0.0",
   "author": "Mator",
   "copyright": "© 2018, Mator",
-  "repository": "https://github.com/z-edit/zedit-keyword-helpers",
+  "repository": "https://github.com/z-edit/zedit-skyrim-keyword-helpers",
   "license": "MIT",
   "scripts": {
     "build": "gulp build",
