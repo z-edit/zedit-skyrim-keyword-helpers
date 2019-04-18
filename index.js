@@ -4,14 +4,15 @@
 //= require src/*.js
 // == END ANGULAR SERVICES ==
 
-ngapp.run(function(interApiService, skyrimArmorKeywordService, skyrimClothingKeywordService, skyrimMaterialService, skyrimVendorKeywordService, skyrimWeaponKeywordService) {
+ngapp.run(function(interApiService, skyrimArmorKeywordService, skyrimClothingKeywordService, skyrimMaterialService, skyrimVendorKeywordService, skyrimWeaponKeywordService, keywordCacheService) {
     interApiService.register({
         api: {
             skyrimArmorKeywordService,
             skyrimClothingKeywordService,
             skyrimMaterialService,
             skyrimVendorKeywordService,
-            skyrimWeaponKeywordService
+            skyrimWeaponKeywordService,
+            keywordCacheService
         }
     });
 });
